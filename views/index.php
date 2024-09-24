@@ -1,8 +1,11 @@
 <?php
 
-require '../dao/Database.php';
+require '../model/Contato.php';
+require '../dao/ContatoDAO.php';
 
-$db = Database::getInstance();
+$contato = new Contato(null, "João", "1199887766", "joao@mail.com");
+$contatoDAO = new ContatoDAO();
 
-$db2 = Database::getInstance();
+echo $contatoDAO->create($contato);
+
 ?>
